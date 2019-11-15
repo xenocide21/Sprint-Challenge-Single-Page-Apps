@@ -6,6 +6,7 @@ import CharacterList from "./components/CharacterList";
 import LocationList from "./components/LocationsList";
 import { Route } from 'react-router-dom'
 // import SearchForm from "./components/SearchForm";
+import './app.css'
 
 export default function App() {
 
