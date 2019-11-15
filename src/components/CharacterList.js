@@ -11,7 +11,7 @@ const CharacterList = () => {
     let x=[];
     useEffect(() => {
         (async()=> {
-            let r = await axios.get("https://rick-api.herokuapp.com/api/character/")
+            let r = await axios.get("https://rick-api.herokuapp.com/api/character/");
             x = r.data.results;
             setChar(x);
             setData(x);

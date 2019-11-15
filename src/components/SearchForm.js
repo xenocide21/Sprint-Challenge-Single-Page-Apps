@@ -1,5 +1,4 @@
 import React from "react";
-import { Input } from "@material-ui/core";
 
 export default function SearchForm({search,setSearch,characters,data}) {
 
@@ -16,7 +15,7 @@ export default function SearchForm({search,setSearch,characters,data}) {
     return (
         <section className="search-form">
             <form onSubmit={handleSubmit}>
-                <Input
+                <input
                     type="text"
                     placeholder="Character Search"
                     name="searchValue"
