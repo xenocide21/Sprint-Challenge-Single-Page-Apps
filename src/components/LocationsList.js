@@ -5,7 +5,7 @@ import LocationCard from "./LocationCard";
 const LocationList = () => {
 
     const [state, setState] = useState([]);
-
+    //api call not working?? no data displayed in console.
     useEffect(() => {
         axios.get("https://rick-api.herokuapp.com/api/location/")
             .then(r => {
@@ -17,7 +17,7 @@ const LocationList = () => {
     }, []);
 
     return (
-        <section className="location-list grid-view">
+        <section className="location-list">
             <div>
                 {state.map((location) =>{
                     return <LocationCard
