@@ -1,32 +1,28 @@
-import React, {useEffect, useState} from "react";
-import axios from 'axios'
+import React from "react";
+import { Input } from "@material-ui/core";
 
-export default function SearchForm({ onSearch }) {
+export default function SearchForm({search,setSearch,characters,data}) {
 
-    const [searchName, setSearchName] = useState([]);
-    useEffect(()=>{
-       axios
-           .get(`https://rick-api.herokuapp.com/api/character/${searchName}`)
-           .then( r => {
-               console.log(r.data.results);
-               setSearchName(r.data.results);
-           })
-    });
-    const handleInputChange = (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
-        setSearchName(e.target.value)
+    };
+
+    const handleChange = e => {
+        const value = e.target.value;
+        setSearch(value);
+        data(characters.filter(character => character.name.toLowerCase().includes(search.toLowerCase())));
     };
 
     return (
         <section className="search-form">
-            <form onSubmit={() => {onSearch(searchName)} }>
-                <input
-                    onChange={handleInputChange}
-                    placeholder="search"
-                    value={searchName}
-                    name="name"
+            <form onSubmit={handleSubmit}>
+                <Input
+                    type="text"
+                    placeholder="Character Search"
+                    name="searchValue"
+                    onChange={handleChange}
+                    value={search}
                 />
-                <button type="submit">Search</button>
             </form>
         </section>
     );

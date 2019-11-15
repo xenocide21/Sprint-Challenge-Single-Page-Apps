@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
+import Search from './SearchForm'
 
 const CharacterList = () => {
 
-    const [state, setState] = useState([]);
-
+    const [char, setChar] = useState([]);
+    const [search, setSearch] = useState('');
+    const [data, setData] = useState([]);
+    let x=[];
     useEffect(() => {
-        axios.get("https://rick-api.herokuapp.com/api/character/")
-            .then(r => {
-                console.log(r.data.results);
-                setState(r.data.results);
-            })
-            .catch(err =>
-                console.log(err))
+        (async()=> {
+            let r = await axios.get("https://rick-api.herokuapp.com/api/character/")
+            x = r.data.results;
+            setChar(x);
+            setData(x);
+        })();
     }, []);
 
     return (
-        <section className="character-list grid-view">
+        <section className="character-list">
+            <Search search={search} setSearch={setSearch} characters={char} data={setData}/>
             <div id="cards">
-                {state.map((character) =>{
+                {data.map((char) =>{
                     return <CharacterCard
-                        key={character.id}
-                        name={character.name}
-                        species={character.species}
-                        status={character.status}
-                        image={character.image}
-                        origin={character.origin.name}
+                        key={char.id}
+                        name={char.name}
+                        species={char.species}
+                        status={char.status}
+                        img={char.image}
+                        origin={char.origin.name}
                     />
                 })}
             </div>

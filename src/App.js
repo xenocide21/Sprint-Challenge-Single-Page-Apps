@@ -14,7 +14,7 @@ export default function App() {
       <Header />
       <Nav />
         <Route exact path='/' component={WelcomePage} />
-        <SearchForm />
+        {/*<SearchForm />*/}
         <Route path='/characters' component={CharacterList}/>
         <Route path='/location' component={LocationList}/>
     </main>
