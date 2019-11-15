@@ -5,7 +5,7 @@ import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import LocationList from "./components/LocationsList";
 import { Route } from 'react-router-dom'
-import SearchForm from "./components/SearchForm";
+// import SearchForm from "./components/SearchForm";
 
 export default function App() {
 
