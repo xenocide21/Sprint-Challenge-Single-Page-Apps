@@ -8,10 +8,12 @@ const CharacterList = () => {
     const [char, setChar] = useState([]);
     const [search, setSearch] = useState('');
     const [data, setData] = useState([]);
-    let x=[];
+
     useEffect(() => {
+        let x=[];
         (async()=> {
             let r = await axios.get("https://rick-api.herokuapp.com/api/character/");
+            console.log(r.data.results);
             x = r.data.results;
             setChar(x);
             setData(x);

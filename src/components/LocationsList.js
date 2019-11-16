@@ -4,23 +4,24 @@ import LocationCard from "./LocationCard";
 
 const LocationList = () => {
 
-    const [state, setState] = useState([]);
+    const [location, setLocation] = useState([]);
     //api call not working?? no data displayed in console.
     useEffect(() => {
-        axios.get("https://rick-api.herokuapp.com/api/location/")
-            .then(r => {
-                console.log(r.data.results);
-                setState(r.data.results);
-            })
-            .catch(err =>
-                console.log(err))
+        let x=[];
+        (async()=> {
+            let r = await axios.get("https://rick-api.herokuapp.com/api/location/");
+            console.log(r.data.results);
+            x = r.data.results;
+            setLocation(x);
+        })();
     }, []);
 
     return (
         <section className="location-list">
             <div>
-                {state.map((location) =>{
+                {location.map((location) =>{
                     return <LocationCard
+                        location={location}
                         key={location.id}
                         name={location.name}
                         type={location.type}

@@ -3,9 +3,8 @@ import Header from "./components/Header.js";
 import Nav from "./components/Nav";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
-import LocationList from "./components/LocationsList";
+import LocationsList from "./components/LocationsList";
 import { Route } from 'react-router-dom'
-// import SearchForm from "./components/SearchForm";
 import './app.css'
 
 export default function App() {
@@ -15,9 +14,8 @@ export default function App() {
       <Header />
       <Nav />
         <Route exact path='/' component={WelcomePage} />
-        {/*<SearchForm />*/}
         <Route path='/characters' component={CharacterList}/>
-        <Route path='/location' component={LocationList}/>
+        <Route path='/location' component={LocationsList}/>
     </main>
   );
 }

@@ -22,6 +22,7 @@ import {Paper} from "@material-ui/core";
 //   font-size: 1.5rem;
 //   text-align: center;
 // `;
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
