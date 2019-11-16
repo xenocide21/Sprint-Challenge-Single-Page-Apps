@@ -29,7 +29,9 @@ const CharacterList = () => {
             setData(x);
         })();
     }, []);
+
     const classes = useStyles();
+
     return (
         <section className="character-list">
             <Search search={search} setSearch={setSearch} characters={char} data={setData}/>

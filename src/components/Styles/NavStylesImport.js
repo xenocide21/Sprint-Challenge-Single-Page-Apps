@@ -7,5 +7,6 @@ import Box from '@material-ui/core/Box';
 import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from '@material-ui/icons/Person';
 import LocationIcon from '@material-ui/icons/LocationCity';
+import PropTypes from 'prop-types';
 
-export { makeStyles , AppBar, Typography, Tab, Tabs, Box, HomeIcon, PersonIcon, LocationIcon }
+export { makeStyles , AppBar, Typography, Tab, Tabs, Box, HomeIcon, PersonIcon, LocationIcon, PropTypes }

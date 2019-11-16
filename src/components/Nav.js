@@ -1,8 +1,8 @@
 
 import React from "react";
-import {NavLink} from "react-router-dom";
-import PropTypes from 'prop-types';
-import { makeStyles, AppBar, Typography, Tab, Tabs, Box, HomeIcon, PersonIcon, LocationIcon } from "./NavStylesImport";
+import { NavLink } from "react-router-dom";
+
+import { makeStyles, AppBar, Typography, Tab, Tabs, Box, HomeIcon, PersonIcon, LocationIcon, PropTypes } from "./Styles/NavStylesImport";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
