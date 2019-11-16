@@ -71,10 +71,6 @@ export default function Nav() {
                 <TabPanel value={value} index={2}>
                     <NavLink style={{textDecoration: 'none', color: 'white'}} to="/location">Locations Page</NavLink>
                 </TabPanel>
-                {/*<div>*/}
-                {/*    <NavLink to="/characters">Characters</NavLink>*/}
-                {/*    <NavLink to="/location">Location</NavLink>*/}
-                {/*</div>*/}
             </AppBar>
         </div>
     );
