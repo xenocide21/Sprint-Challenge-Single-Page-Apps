@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 import Search from './SearchForm'
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: '5%',
+        flexGrow: 1,
+    },
+}));
 
 const CharacterList = () => {
 
@@ -19,18 +29,18 @@ const CharacterList = () => {
             setData(x);
         })();
     }, []);
-
+    const classes = useStyles();
     return (
         <section className="character-list">
             <Search search={search} setSearch={setSearch} characters={char} data={setData}/>
-            <div id="cards">
+            <div className={classes.root}>
                 {data.map((char) =>{
                     return <CharacterCard
                         key={char.id}
                         name={char.name}
                         species={char.species}
                         status={char.status}
-                        img={char.image}
+                        image={char.image}
                         origin={char.origin.name}
                     />
                 })}

@@ -26,6 +26,7 @@ const LocationList = () => {
                         name={location.name}
                         type={location.type}
                         dimension={location.dimension}
+                        residents={location.residents.length}
                     />
                 })}
             </div>

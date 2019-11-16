@@ -32,6 +32,7 @@ export default function LocationCard(props) {
               <Paper className={classes.paper}>Planet: {props.name}</Paper>
               <Paper className={classes.paper}>Type: {props.type}</Paper>
               <Paper className={classes.paper}>Dimension: {props.dimension}</Paper>
+              <Paper className={classes.paper}>Residents: {props.residents}</Paper>
             </Typography>
         </Container>
       </React.Fragment>
