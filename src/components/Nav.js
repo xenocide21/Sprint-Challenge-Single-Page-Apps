@@ -66,10 +66,10 @@ export default function Nav() {
                     <NavLink style={{textDecoration: 'none', color: 'white'}} to="/">Home Page</NavLink>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <NavLink style={{textDecoration: 'none', color: 'white'}} to="/characters">Characters</NavLink>
+                    <NavLink style={{textDecoration: 'none', color: 'white'}} to="/characters">Characters Page</NavLink>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <NavLink style={{textDecoration: 'none', color: 'white'}} to="/location">Location</NavLink>
+                    <NavLink style={{textDecoration: 'none', color: 'white'}} to="/location">Locations Page</NavLink>
                 </TabPanel>
                 {/*<div>*/}
                 {/*    <NavLink to="/characters">Characters</NavLink>*/}

@@ -1,3 +1,6 @@
-.card {
-
+.MuiInput-input {
+ text-align: center;
  }
+.MuiAppBar-colorPrimary {
+ margin: 0 0 2%;
+}

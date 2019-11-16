@@ -14,7 +14,7 @@ export default function SearchForm({search,setSearch,characters,data}) {
     };
 
     return (
-        <section className="search-form">
+        <section style={{display:"flex", justifyContent:"center", margin:"auto", maxWidth: "50%"}} className="search-form">
             <form onSubmit={handleSubmit}>
                 <Input
                     type="text"
