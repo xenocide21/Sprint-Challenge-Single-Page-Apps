@@ -8,6 +8,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import HomeIcon from '@material-ui/icons/Home';
+import PersonIcon from '@material-ui/icons/Person';
+import LocationIcon from '@material-ui/icons/LocationCity';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -58,9 +61,9 @@ export default function Nav() {
         <div className={classes.root}>
             <AppBar position="static" className="navigation">
                 <Tabs value={value} onChange={handleChange} aria-label="tabs">
-                    <Tab label="Home" {...a11yProps(0)} />
-                    <Tab label="Characters" {...a11yProps(1)} />
-                    <Tab label="Location" {...a11yProps(2)} />
+                    <Tab icon={<HomeIcon/>} label="Home" {...a11yProps(0)} />
+                    <Tab icon={<PersonIcon/>} label="Characters" {...a11yProps(1)} />
+                    <Tab icon={<LocationIcon />} label="Location" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel value={value} index={0}>
                     <NavLink style={{textDecoration: 'none', color: 'white'}} to="/">Home Page</NavLink>
