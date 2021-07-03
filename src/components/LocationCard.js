@@ -1,19 +1,40 @@
 import React from "react";
-import styled from 'styled-components';
+import Container from "@material-ui/core/Container";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Typography from "@material-ui/core/Typography";
+// import Grid from "@material-ui/core/Grid";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import {Paper} from "@material-ui/core";
+// import styled from 'styled-components';
 
-const Card = styled.div`
+// const Card = styled.div`
+//
+// `;
 
-`;
-
+const useStyles = makeStyles(theme => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+}));
 
 export default function LocationCard(props) {
+    const classes = useStyles();
   return (
-      <Card>
-        <Card.Content>
-          <h1>Planet: {props.name}</h1>
-          <p>Type: {props.type}</p>
-          <p>Dimension: {props.dimension}</p>
-        </Card.Content>
-      </Card>
+      <React.Fragment>
+        <CssBaseline/>
+        <Container maxWidth="sm">
+            <Typography component='div' style={{height: '300px', width: '300px'}}>
+              <Paper className={classes.paper}>Planet: {props.name}</Paper>
+              <Paper className={classes.paper}>Type: {props.type}</Paper>
+              <Paper className={classes.paper}>Dimension: {props.dimension}</Paper>
+              <Paper className={classes.paper}>Residents: {props.residents}</Paper>
+            </Typography>
+        </Container>
+      </React.Fragment>
   );
 };

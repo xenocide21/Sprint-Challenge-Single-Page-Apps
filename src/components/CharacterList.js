@@ -1,32 +1,49 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
+import Search from './SearchForm'
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: '5%',
+        flexGrow: 1,
+    },
+}));
 
 const CharacterList = () => {
 
-    const [state, setState] = useState([]);
+    const [char, setChar] = useState([]);
+    const [search, setSearch] = useState('');
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("https://rick-api.herokuapp.com/api/character/")
-            .then(r => {
-                console.log(r.data.results);
-                setState(r.data.results);
-            })
-            .catch(err =>
-                console.log(err))
+        let x=[];
+        (async()=> {
+            let r = await axios.get("https://rick-api.herokuapp.com/api/character/");
+            console.log(r.data.results);
+            x = r.data.results;
+            setChar(x);
+            setData(x);
+        })();
     }, []);
 
+    const classes = useStyles();
+
     return (
-        <section className="character-list grid-view">
-            <div id="cards">
-                {state.map((character) =>{
+        <section className="character-list">
+            <Search search={search} setSearch={setSearch} characters={char} data={setData}/>
+            <div className={classes.root}>
+                {data.map((char) =>{
                     return <CharacterCard
-                        key={character.id}
-                        name={character.name}
-                        species={character.species}
-                        status={character.status}
-                        image={character.image}
-                        origin={character.origin.name}
+                        key={char.id}
+                        name={char.name}
+                        species={char.species}
+                        status={char.status}
+                        image={char.image}
+                        origin={char.origin.name}
                     />
                 })}
             </div>

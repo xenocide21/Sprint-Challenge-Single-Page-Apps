@@ -25,10 +25,10 @@ In this challenge, you will create a Single Page Application complete with Clien
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-- [ ]  Explain benefit(s) using `client-side routing`?
+- [x]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
-
+> Answer:client side routing makes the page more user friendly and responsive, and most importantly quick because it does not force the page to refresh, by only updating the api when you need to, and more speficially not the entire page but only the component being called.
+>
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
